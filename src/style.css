@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b1522;
+}
+
+.heart {
+  position: relative;
+  height: 70px;
+  width: 70px;
+  background: #f20044;
+  transform: rotate(-45deg);
+  animation: heart 0.6s linear infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background: #f20044;
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -35px;
+  left: 0;
+}
+
+.heart:after {
+  left: 35px;
+}
+
+@keyframes heart {
+  0% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
+.text {
+  color: aliceblue;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  position: absolute;
+  bottom: 100px;
+  font-style: oblique;
+}
+
+@media (max-width: 375px) { /* iPhone 11 has a viewport width of 375px */
+  .heart {
+    height: 50px;
+    width: 50px;
+  }
+
+  .heart:before,
+  .heart:after {
+    height: 50px;
+    width: 50px;
+  }
+
+  .heart:before {
+    top: -25px;
+  }
+
+  .heart:after {
+    left: 25px;
+  }
+
+  .text {
+    bottom: 80px;
+    font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+  }
+}
