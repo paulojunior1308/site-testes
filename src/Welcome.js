@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import './Welcome.css';
 import Letter from './Letter';
 import Timeline from "./Timeline";
-import Gallery from "./Gallery";
 import Puzzle from "./Puzzle";
 
 
@@ -19,8 +18,6 @@ const renderPage = () => {
       return <Letter goBack={goBack} />;
     case 'timeline':
       return <Timeline goBack={goBack} />;
-    case 'gallery':
-      return <Gallery goBack={goBack} />;
     case 'puzzle':
       return <Puzzle goBack={goBack} />;
     default:
