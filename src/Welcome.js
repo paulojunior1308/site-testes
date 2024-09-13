@@ -36,11 +36,6 @@ function Welcome() {
 
       window.addEventListener('click', handleUserInteraction);
 
-      return () => {
-        window.removeEventListener('click', handleUserInteraction);
-        newAudio.pause();
-        newAudio.currentTime = 0;
-      };
     }
   }, [currentPage]); // Toca o áudio sempre que a página 'home' for carregada
 
