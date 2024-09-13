@@ -7,6 +7,7 @@ import matue from "./image/matue.mp3";
 
 function Welcome() {
   const [currentPage, setCurrentPage] = useState('home'); // Estado para controlar a página atual
+  const [, setAudio] = useState(null); // Estado para gerenciar o áudio
 
   const goBack = () => {
     setCurrentPage('home');
@@ -14,12 +15,32 @@ function Welcome() {
 
   useEffect(() => {
     if (currentPage === 'home') {
-      const audio = new Audio(matue);
-      audio.loop = true;
-      audio.play().catch(error => {
-        // Se o navegador bloquear o autoplay, o erro será capturado aqui
+      // Cria uma nova instância do áudio
+      const newAudio = new Audio(matue);
+      newAudio.loop = true;
+      setAudio(newAudio);
+
+      // Tenta reproduzir o áudio e captura erros
+      newAudio.play().catch(error => {
         console.log("O autoplay foi bloqueado: ", error);
       });
+
+      // Adiciona um manipulador de eventos para o clique na página
+      const handleUserInteraction = () => {
+        newAudio.play().catch(error => {
+          console.log("O autoplay foi bloqueado após interação: ", error);
+        });
+        // Remove o manipulador após a primeira interação
+        window.removeEventListener('click', handleUserInteraction);
+      };
+
+      window.addEventListener('click', handleUserInteraction);
+
+      return () => {
+        window.removeEventListener('click', handleUserInteraction);
+        newAudio.pause();
+        newAudio.currentTime = 0;
+      };
     }
   }, [currentPage]); // Toca o áudio sempre que a página 'home' for carregada
 
