@@ -1,0 +1,310 @@
+/* Estilos gerais para responsividade */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background: url('../public/image/fundo1.jpg') repeat center center;
+  background-size: 25%;
+}
+
+.welcome {
+  font-family: 'Montserrat', sans-serif;
+  background: url('../public/image/fundo.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00a2fffd;
+}
+
+.welcome-message {
+  font-size: 2.5rem;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.bn5 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.bn5:hover {
+  background-color: #ff1493;
+}
+
+.text1 {
+  color: aliceblue;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: oblique;
+}
+
+.letter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #555;
+  background: #fffaf0;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  margin: 0 auto;
+  white-space: pre-wrap;
+  margin-top: 5rem;
+}
+
+.typing {
+  display: inline;
+  border-right: 2px solid #fff;
+  padding-right: 5px;
+  animation: blinkCursor 0.75s step-start infinite;
+}
+
+@keyframes blinkCursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+.surpresa {
+  width: 25%;
+  height: auto;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-top: 50px;
+  color: #ff69b4;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: bold;
+}
+
+.romantic-timeline {
+  width: 80%;
+  margin: 50px auto;
+  display: grid;
+  align-items: center;
+}
+
+.romantic-event {
+  background-color: #fffaf0;
+  padding: 20px;
+  border-left: 6px solid #ff69b4;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.romantic-event h3 {
+  font-size: 2rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.romantic-event p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.romantic-event img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ff69b4;
+}
+
+.romantic-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-button {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  margin: 20px auto;
+  background-color: #ff69b4;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.footer-button:hover {
+  background-color: #ff1493;
+}
+
+/* Puzzle */
+.puzzle {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Media Query para iPhone 11 */
+@media screen and (max-width: 414px) {
+  .welcome {
+    font-family: 'Montserrat', sans-serif;
+    background: url('../public/image/fundo2.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00a2fffd;
+  }
+  
+  .welcome-message {
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .letter {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .bn5 {
+    padding: 0.4em 1.5em;
+    font-size: 0.8rem;
+  }
+
+  .surpresa {
+    width: 50%;
+    margin-top: 2rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .romantic-event {
+    flex-direction: column;
+  }
+
+  .romantic-event img {
+    width: 120px;
+    height: 120px;
+    margin-left: 5rem;
+  }
+
+  .footer-button {
+    width: 150px;
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .welcome-message {
+    font-size: 2rem;
+  }
+
+  .letter {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .bn5 {
+    padding: 0.5em 1.5em;
+    font-size: 0.9rem;
+  }
+
+  .surpresa {
+    width: 30%;
+    margin-top: 3rem;
+  }
+
+  h1, h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .romantic-event {
+    flex-direction: row;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .romantic-event img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .footer-button {
+    width: 180px;
+    padding: 8px;
+    font-size: 15px;
+  }
+}
