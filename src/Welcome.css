@@ -246,13 +246,27 @@ button {
   }
 
   .romantic-event {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column !important; /* Coloca os elementos em coluna */ 
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 20px 0; /* Adiciona espaçamento ao redor do evento */
+    margin-bottom: 20px;
+    gap: 10px;
   }
 
-  .romantic-event img {
+  .romantic-content {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 15px; /* Adiciona espaçamento entre o texto e a imagem */
+    margin: 0 auto;
+    width: 80%;
+    flex-direction: column;
+  }
+  
+  .romantic-image img {
     width: 120px;
     height: 120px;
-    margin-left: 5rem;
+    margin-top: 0; /* Remove qualquer margem superior adicional */
   }
 
   .footer-button {
@@ -261,6 +275,8 @@ button {
     font-size: 14px;
   }
 }
+
+
 
 @media screen and (max-width: 1366px) {
   .welcome-message {

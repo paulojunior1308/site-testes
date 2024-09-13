@@ -76,7 +76,9 @@ const Timeline = () => {
             <h3>{event.title}</h3>
             <p>{event.description}</p>
           </div>
-          <img src={event.image} alt={event.alt}/>
+          <div className='romantic-image'>
+            <img src={event.image} alt={event.alt}/>
+          </div>
         </div>
       ))}
       <div className="timeline-footer">
